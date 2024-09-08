@@ -1,8 +1,7 @@
 name: "Render Resume"
 on:
   push:
-    branches:
-        - main
+
 jobs:
   render:
     runs-on: ubuntu-latest
