@@ -22,7 +22,7 @@ basics:
     username: dza89
     url: https://github.com/dza89
 work:
-- company: Deloitte
+- name: Deloitte
   position: Manager/Lead
   startDate: '2023-09-01'
   website: https://www.linkedin.com/company/deloitte/
@@ -30,7 +30,7 @@ work:
   - Designed and developed various data and full stack platforms for some of the biggest
     financial institutions
   - Mentored and trained junior and senior engineers
-- company: Deloitte
+- names: Deloitte
   position: Cloud Consultant
   startDate: '2022-09-15'
   website: https://www.linkedin.com/company/deloitte/
@@ -38,7 +38,7 @@ work:
   - Led a team in creating a cost-efficient, serverless platform that processes millions
     of transactions per day, with operational costs under $10,000 per month.
   - Mentored and trained junior and senior engineers
-- company: Nationale-Nederlanden
+- name: Nationale-Nederlanden
   endDate: '2022-09-14'
   highlights:
   - Created an enterprise ready self-service Kubernetes platform
@@ -51,7 +51,7 @@ work:
   website: https://www.linkedin.com/company/1211
   summary: Develop and maintain more than thirty multi-tenancy clusters in Azure and
     AWS
-- company: Nationale-Nederlanden
+- name: Nationale-Nederlanden
   endDate: '2019-07-31'
   highlights:
   - Integration and Deployments with Azure DevOps
@@ -61,7 +61,7 @@ work:
   startDate: '2018-05-31'
   summary: Responsible for creating the Golden image used by thousands of machines
     throughout the company
-- company: Nationale-Nederlanden
+- name: Nationale-Nederlanden
   endDate: '2018-05-31'
   highlights:
   - Streamlined the entire request process
@@ -70,7 +70,7 @@ work:
   summary: Responsible for the back - end banking systems of Nationale Nederlanden
   position: 'DevOps Engineer '
   startDate: '2017-11-30'
-- company: Nationale-Nederlanden
+- name: Nationale-Nederlanden
   endDate: '2017-11-30'
   highlights:
   - Automated various tasks
@@ -78,25 +78,25 @@ work:
   position: Service Management
   startDate: '2016-12-31'
   summary: Responsible for the back - end banking systems of Nationale Nederlanden
-- company: Calco
+- name: Calco
   endDate: '2018-09-30'
   highlights: []
   position: MasterClass Professional
   startDate: '2016-10-31'
   website: https://www.linkedin.com/company/46332
-- company: Solid Optics
+- name: Solid Optics
   endDate: '2015-12-31'
   highlights: []
   position: Technical Sales Manager
   startDate: '2013-09-30'
   website: https://www.linkedin.com/company/4975422
-- company: Delta Lloyd
+- name: Delta Lloyd
   endDate: '2013-06-30'
   highlights: []
   position: Relationship Manager
   startDate: '2012-02-28'
   website: https://www.linkedin.com/company/4201
-- company: American Express
+- name: American Express
   endDate: '2012-02-28'
   highlights: []
   position: Risk Analyst
