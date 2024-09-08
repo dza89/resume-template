@@ -10,48 +10,50 @@
     <link rel="stylesheet" type="text/css" href="../resume.css" />
 </head>
 
-<body>
-    <main>
+<body class="bg-white text-gray-900">
 
-        <h1>
-            <img src="{{ resume.basics.image }}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; vertical-align: middle;" />
-            {{ resume.basics.name }} <span>∙</span> <span>{{ resume.basics.label }}</span>
+    <main class="max-w-4xl mx-auto p-8">
+
+        <h1 class="text-3xl font-bold border-b-2 border-red-600 pb-2 flex items-center">
+            <img src="{{ resume.basics.image }}" alt="Profile Picture" class="w-24 h-24 rounded-full object-cover mr-4" />
+            {{ resume.basics.name }} <span class="mx-2">∙</span> <span class="text-lg text-gray-600">{{ resume.basics.label }}</span>
         </h1>
 
-        <dl>
+        <dl class="mt-4">
             {% if resume.basics.email %}
-            <dt>Email</dt>
-            <dd><code>{{ resume.basics.email }}</code></dd>
+            <dt class="inline font-semibold text-red-600">Email:</dt>
+            <dd class="inline text-gray-700 ml-2"><code>{{ resume.basics.email }}</code></dd>
             {% endif %}
             {% if resume.basics.phone %}
-            <dt>Phone</dt>
-            <dd><code>{{ resume.basics.phone }}</code></dd>
+            <dt class="inline font-semibold text-red-600 ml-4">Phone:</dt>
+            <dd class="inline text-gray-700 ml-2"><code>{{ resume.basics.phone }}</code></dd>
             {% endif %}
             {% if resume.basics.url %}
-            <dt>Web</dt>
-            <dd><code>{{ resume.basics.url }}</code></dd>
+            <dt class="inline font-semibold text-red-600 ml-4">Web:</dt>
+            <dd class="inline text-gray-700 ml-2"><code>{{ resume.basics.url }}</code></dd>
             {% endif %}
             {% if resume.basics.location %}
-            <dt>Location</dt>
-            <dd>{{ resume.basics.location.address }}, {{ resume.basics.location.city }}, {{ resume.basics.location.postalCode }}, {{ resume.basics.location.countryCode }}</dd>
+            <dt class="block font-semibold text-red-600 mt-4">Location:</dt>
+            <dd class="text-gray-700">{{ resume.basics.location.address }}, {{ resume.basics.location.city }}, {{ resume.basics.location.postalCode }}, {{ resume.basics.location.countryCode }}</dd>
             {% endif %}
             {% if resume.basics.profiles %}
             {% for network in resume.basics.profiles %}
-            <dt>{{ network.network | lower }}</dt>
-            <dd><code><a href="{{ network.url }}" target="_blank">{{ network.username }}</a></code></dd>
+            <dt class="inline font-semibold text-red-600 mt-4">{{ network.network }}:</dt>
+            <dd class="inline text-gray-700 ml-2"><code><a href="{{ network.url }}" target="_blank" class="text-blue-600 hover:underline">{{ network.username }}</a></code></dd>
             {% endfor %}
             {% endif %}
         </dl>
 
-        <p>{{ resume.basics.summary | markdown | safe }}</p>
+        <p class="mt-4 text-gray-800">{{ resume.basics.summary | markdown | safe }}</p>
 
         {% if resume.skills %}
-        <h2>Skills and Competencies</h2>
+        <h2 class="text-2xl font-bold text-red-600 mt-8">Skills and Competencies</h2>
 
-        <div class="inline-bullets">
-            <ul>
+        <div class="inline-bullets mt-2">
+            <ul class="list-none flex flex-wrap gap-4">
                 {% for skill in resume.skills %}
-                <li>{{ skill.name }}: 
+                <li class="text-gray-700">
+                    <span class="font-semibold">{{ skill.name }}:</span> 
                     {% for keyword in skill.keywords %}
                     <span>{{ keyword }}{% if not loop.last %}, {% endif %}</span>
                     {% endfor %}
@@ -61,39 +63,40 @@
         </div>
         {% endif %}
 
-        <h2>Recent Experience</h2>
+        <h2 class="text-2xl font-bold text-red-600 mt-8">Recent Experience</h2>
         {% for work in resume.work %}
-        <h3>{{ work.position }}, {{ work.name }} <span class="date">{{ work.startDate | date(format="%Y") }}-{% if
-                work.endDate %}{{ work.endDate | date(format="%Y") }}{% else %}Present{% endif %}</span></h3>
-
-        <p>{{ work.summary | safe }}</p>
-        
-        <ul>
+        <h3 class="text-xl font-semibold mt-4">{{ work.position }}, {{ work.name }} <span class="float-right text-gray-600">{{ work.startDate | date(format="%Y") }}-{% if work.endDate %}{{ work.endDate | date(format="%Y") }}{% else %}Present{% endif %}</span></h3>
+        <p class="text-gray-700">{{ work.summary | safe }}</p>
+        <ul class="mt-2 text-gray-700">
             {% for highlight in work.highlights %}
-            <li>{{ highlight | markdown(inline=true) | safe }}</li>
+            <li class="mt-1">{{ highlight | markdown(inline=true) | safe }}</li>
             {% endfor %}
         </ul>
         {% endfor %}
 
-        <h2>Education</h2>
-        <ul>
+        <h2 class="text-2xl font-bold text-red-600 mt-8">Education</h2>
+        <ul class="mt-2 text-gray-700">
             {% for education in resume.education %}
-            <li>{{ education.studyType }}, {{ education.area }}, {{ education.institution }}&nbsp;
-                <span class="date">{{ education.startDate | date(format="%Y") }}-{{ education.endDate | date(format="%Y") }}</span>
+            <li class="mt-1">
+                <span class="font-semibold">{{ education.studyType }}, {{ education.area }}</span>, {{ education.institution }}
+                <span class="float-right text-gray-600">{{ education.startDate | date(format="%Y") }}-{{ education.endDate | date(format="%Y") }}</span>
             </li>
             {% endfor %}
         </ul>
 
         {% if resume.languages %}
-        <h2>Languages</h2>
-        <ul>
+        <h2 class="text-2xl font-bold text-red-600 mt-8">Languages</h2>
+        <ul class="mt-2 text-gray-700">
             {% for language in resume.languages %}
-            <li>{{ language.language }}: {{ language.fluency }}</li>
+            <li class="mt-1">
+                <span class="font-semibold">{{ language.language }}:</span> {{ language.fluency }}
+            </li>
             {% endfor %}
         </ul>
         {% endif %}
 
     </main>
+
 </body>
 
 </html>
