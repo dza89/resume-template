@@ -67,7 +67,7 @@ work:
   - Streamlined the entire request process
   - Setup monitoring with Splunk
   - Migrated on-prem applications to SaaS
-  summary: Responsible for the back - end banking systems of Nationale Nederlanden
+  summary: Responsible for the back-end banking systems of Nationale Nederlanden
   position: 'DevOps Engineer '
   startDate: '2017-11-30'
 - name: Nationale-Nederlanden
@@ -77,7 +77,7 @@ work:
   - Managed upgrades and migrations
   position: Service Management
   startDate: '2016-12-31'
-  summary: Responsible for the back - end banking systems of Nationale Nederlanden
+  summary: Responsible for the back-end banking systems of Nationale Nederlanden
 - name: Calco
   endDate: '2018-09-30'
   highlights: []
