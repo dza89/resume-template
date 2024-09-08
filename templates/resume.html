@@ -14,29 +14,32 @@
     <main>
 
         <h1>
+            <img src="{{ resume.basics.image }}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; vertical-align: middle;" />
             {{ resume.basics.name }} <span>∙</span> <span>{{ resume.basics.label }}</span>
         </h1>
 
         <dl>
             {% if resume.basics.email %}
-            <dt>email</dt>
-            <dd>
-                <code>{{ resume.basics.email }}</code>
-            </dd>
+            <dt>Email</dt>
+            <dd><code>{{ resume.basics.email }}</code></dd>
+            {% endif %}
+            {% if resume.basics.phone %}
+            <dt>Phone</dt>
+            <dd><code>{{ resume.basics.phone }}</code></dd>
             {% endif %}
             {% if resume.basics.url %}
-            <dt>web</dt>
+            <dt>Web</dt>
             <dd><code>{{ resume.basics.url }}</code></dd>
             {% endif %}
             {% if resume.basics.profiles %}
             {% for network in resume.basics.profiles %}
             <dt>{{ network.network | lower }}</dt>
-            <dd><code>{{ network.username }}</code></dd>
+            <dd><code><a href="{{ network.url }}" target="_blank">{{ network.username }}</a></code></dd>
             {% endfor %}
             {% endif %}
         </dl>
 
-        {{ resume.basics.summary | markdown | safe }}
+        <p>{{ resume.basics.summary | markdown | safe }}</p>
 
         {% if resume.skills %}
         <h2>Skills and Competencies</h2>
@@ -44,59 +47,45 @@
         <div class="inline-bullets">
             <ul>
                 {% for skill in resume.skills %}
-                <li>{{ skill.name }}</li>
-                {% if skill.keywords and "break" in skill.keywords %}
-            </ul>
-        </div>
-        <div class="inline-bullets" style="padding-top: 0.5rem;">
-            <ul>
-                {% endif %}
+                <li>{{ skill.name }}: 
+                    {% for keyword in skill.keywords %}
+                    <span>{{ keyword }}{% if not loop.last %}, {% endif %}</span>
+                    {% endfor %}
+                </li>
                 {% endfor %}
             </ul>
         </div>
-
         {% endif %}
 
         <h2>Recent Experience</h2>
         {% for work in resume.work %}
         <h3>{{ work.position }}, {{ work.name }} <span class="date">{{ work.startDate | date(format="%Y") }}-{% if
-                work.endDate
-                %}{{ work.endDate |
-                date(format="%Y") }}{% endif %}</span></h3>
+                work.endDate %}{{ work.endDate | date(format="%Y") }}{% else %}Present{% endif %}</span></h3>
 
         <ul>
             {% for highlight in work.highlights %}
             <li>{{ highlight | markdown(inline=true) | safe }}</li>
             {% endfor %}
         </ul>
-
         {% endfor %}
 
-        <h2>Service and Honors</h2>
-
-        <ul>
-            {% for award in resume.awards %}
-            <li>{{ award.title | markdown(inline=true) | safe }} {% if award.date %}<span class="date">{{ award.date |
-                    date(format="%Y") }}</span>{% endif %}</li>
-            {% endfor %}
-        </ul>
-
-        <h2>Open Source</h2>
-
-        <ul>
-            {% for project in resume.projects %}
-            <li><em>{{ project.name }}</em>: {{ project.description | markdown(inline=true) | safe }}</li>
-            {% endfor %}
-        </ul>
-
         <h2>Education</h2>
-
         <ul>
             {% for education in resume.education %}
-            <li>{{ education.studyType }}, {{ education.area }}, {{ education.institution }}&nbsp;<span class="date">{{
-                    education.startDate | date(format="%Y") }}-{{ education.endDate | date(format="%Y") }}</span></li>
+            <li>{{ education.studyType }}, {{ education.area }}, {{ education.institution }}&nbsp;
+                <span class="date">{{ education.startDate | date(format="%Y") }}-{{ education.endDate | date(format="%Y") }}</span>
+            </li>
             {% endfor %}
         </ul>
+
+        {% if resume.languages %}
+        <h2>Languages</h2>
+        <ul>
+            {% for language in resume.languages %}
+            <li>{{ language.language }}: {{ language.fluency }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
     </main>
 </body>
