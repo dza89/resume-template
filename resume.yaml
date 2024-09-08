@@ -1,56 +1,145 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json
+---
 basics:
-  name: Camina Drummer
-  label: Pirate queen of the Belt
-  email: drummer@tynan.opa
-  url: https://tynan.opa
-  summary: |
-    Experienced leader with deep relationships across Earth, Mars, and the Belt. 
-    Demonstrated expertise in managing complex relationships and stakeholder networks.
-    Qualified starship captain with hands-on approach and close combat skills.
-
-    *This is an example resume template*.
+  name: Daan Potter
+  label: Solution Architect at Deloitte
+  picture: https://s3.eu-central-1.wasabisys.com/public-100000072477/1516946588536.jpeg
+  image: https://s3.eu-central-1.wasabisys.com/public-100000072477/1516946588536.jpeg
+  email: work@dnpr.nl
+  phone: +31651644469
+  summary: A passionate and goal-oriented IT specialist. I love working in complex
+    environments and architecting/building new solutions. Doing this is the most fun
+    in a small team. Exchanging ideas and collaborating to create the best result.
+  location:
+    address: Kastanjestraat 38
+    postalCode: 2023 TG
+    city: Haarlem
+    countryCode: NL
   profiles:
-    - network: BeltaNet
-      username: camina
+  - network: LinkedIn
+    username: '92957641'
+    url: https://www.linkedin.com/in/92957641/
+  - network: Github
+    username: dza89
+    url: https://github.com/dza89
 work:
-  - name: Transport Union
-    position: President
-    startDate: "2303-01-01"
-    highlights:
-      - Founding president of multi-solar-system commerce conglomerate.
-  - name: Medina Station
-    position: Captain
-    startDate: "2277-05-01"
-    highlights:
-      - Led Belter and OPA forces in control of OPAS *Behemoth*.
-      - Established and maintained OPA presence in critical system transfer point.
-  - name: Tycho Station
-    position: Assistant Director
-    startDate: "2276-05-01"
-    highlights:
-      - Defended the station from mutineers.
-      - Appropriated *200* valuable munitions from UNN forces.
+- company: Deloitte
+  position: Manager/Lead
+  startDate: '2023-09-01'
+  website: https://www.linkedin.com/company/deloitte/
+  highlights:
+  - Designed and developed various data and full stack platforms for some of the biggest
+    financial institutions
+  - Mentored and trained junior and senior engineers
+- company: Deloitte
+  position: Cloud Consultant
+  startDate: '2022-09-15'
+  website: https://www.linkedin.com/company/deloitte/
+  highlights:
+  - Led a team in creating a cost-efficient, serverless platform that processes millions
+    of transactions per day, with operational costs under $10,000 per month.
+  - Mentored and trained junior and senior engineers
+- company: Nationale-Nederlanden
+  endDate: '2022-09-14'
+  highlights:
+  - Created an enterprise ready self-service Kubernetes platform
+  - Developed and designed various applications
+  - Integration and Deployments with Gitlab and GoCD
+  - Kubernetes clusters as a product using CDK
+  - Mentored and trained junior engineers
+  position: Kubernetes/Cloud Engineer
+  startDate: '2019-07-31'
+  website: https://www.linkedin.com/company/1211
+  summary: Develop and maintain more than thirty multi-tenancy clusters in Azure and
+    AWS
+- company: Nationale-Nederlanden
+  endDate: '2019-07-31'
+  highlights:
+  - Integration and Deployments with Azure DevOps
+  - Fully IaC with Terraform and Ansible
+  - Cut costs with eighty procent
+  position: Cloud Engineer
+  startDate: '2018-05-31'
+  summary: Responsible for creating the Golden image used by thousands of machines
+    throughout the company
+- company: Nationale-Nederlanden
+  endDate: '2018-05-31'
+  highlights:
+  - Streamlined the entire request process
+  - Setup monitoring with Splunk
+  - Migrated on-prem applications to SaaS
+  summary: Responsible for the back - end banking systems of Nationale Nederlanden
+  position: 'DevOps Engineer '
+  startDate: '2017-11-30'
+- company: Nationale-Nederlanden
+  endDate: '2017-11-30'
+  highlights:
+  - Automated various tasks
+  - Managed upgrades and migrations
+  position: Service Management
+  startDate: '2016-12-31'
+  summary: Responsible for the back - end banking systems of Nationale Nederlanden
+- company: Calco
+  endDate: '2018-09-30'
+  highlights: []
+  position: MasterClass Professional
+  startDate: '2016-10-31'
+  website: https://www.linkedin.com/company/46332
+- company: Solid Optics
+  endDate: '2015-12-31'
+  highlights: []
+  position: Technical Sales Manager
+  startDate: '2013-09-30'
+  website: https://www.linkedin.com/company/4975422
+- company: Delta Lloyd
+  endDate: '2013-06-30'
+  highlights: []
+  position: Relationship Manager
+  startDate: '2012-02-28'
+  website: https://www.linkedin.com/company/4201
+- company: American Express
+  endDate: '2012-02-28'
+  highlights: []
+  position: Risk Analyst
+  startDate: '2011-02-28'
+  website: https://www.linkedin.com/company/1277
 education:
-  - institution: Univ. of Ceres
-    area: Station Management
-    studyType: B.A.
-    startDate: "2262-01-01"
-    endDate: "2266-01-01"
-awards:
-  - title: Tycho Station handball champion
-    date: "2023-06-01"
+- institution: Amsterdam University of Applied Sciences
+  area: International Marketing
+  studyType: Bachelor’s Degree
+  startDate: '2010-12-31'
+  endDate: '2014-12-31'
+- institution: Vrije Universiteit Amsterdam
+  area: Science, Business and Innovation
+  studyType: ''
+  startDate: '2008-12-31'
+  endDate: '2010-12-31'
 skills:
-  - name: Starship navigation
-  - name: Epstein Drive maintenance
-  - name: Small arms
-  - name: Piracy
-  - name: Anti-piracy
-    keywords:
-      - break
-  - name: Conflict resolution
-  - name: Relationship management
-  - name: Hostage negotiation
-projects:
-  - name: Nauvoo
-    description: generation ship built at Tycho Station.
+- name: Programming
+  keywords:
+  - Python
+  - Golang
+  - TypeScript
+- name: Containerization and Orchestration
+  keywords:
+  - Docker
+  - Kubernetes
+- name: IaC
+  keywords:
+  - Terraform
+  - CDK
+- name: CI/CD
+  keywords:
+  - GitLab
+  - GitHub
+  - Tekton
+  - GoCD
+  - Azure DevOps
+- name: Cloud Platforms
+  keywords:
+  - AWS
+  - Azure
+languages:
+- language: en
+  fluency: Fluent
+- language: nl
+  fluency: Native
